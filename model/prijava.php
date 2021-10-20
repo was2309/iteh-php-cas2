@@ -41,7 +41,7 @@ class Prijava{
 
     #deleteById
 
-    public function delteById(mysqli $conn)
+    public function deleteById(mysqli $conn)
     {
         $query = "DELETE FROM prijave WHERE id=$this->id";
         return $conn->query($query);
@@ -55,7 +55,7 @@ class Prijava{
     }
 
     #insert add
-    public static function insert(Prijava $prijava, mysqli $conn)
+    public static function add(Prijava $prijava, mysqli $conn)
     {
         $query = "INSERT INTO prijave(predmet, katedra, sala, datum) VALUES('$prijava->predmet','$prijava->katedra','$prijava->sala','$prijava->datum')";
         return $conn->query($query);
