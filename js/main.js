@@ -102,7 +102,7 @@ $('#izmeniForm').submit(function () {
     console.log(serializedData);
     $inputs.prop('disabled', true);
 
-    
+    // kreirati request za UPDATE handler
 
     request.done(function (response, textStatus, jqXHR) {
 
