@@ -103,12 +103,19 @@ $('#izmeniForm').submit(function () {
     $inputs.prop('disabled', true);
 
     // kreirati request za UPDATE handler
+    request=$.ajax({
+        url:'handler/update.php',
+        type:'post',
+        data:serializedData
+    })
+
 
     request.done(function (response, textStatus, jqXHR) {
 
 
-        if (response === 'Success') {
+        if (response.trim()== 'Success') {
             console.log('Kolokvijum je izmenjen');
+            alert("Kolokvijum je izmenjen");
             location.reload(true);
             //$('#izmeniForm').reset;
         }
